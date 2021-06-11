@@ -4,12 +4,15 @@
 import React from "react";
 // ReactDom used for render the first component of our project
 import ReactDom from "react-dom";
+// Impoting css file index.css
+import "./index.css";
 
 // This component called stateless functional component or dumped component.
 // Always return JXS
 function BookList() {
 	return (
-		<section>
+		<section className="booklist">
+			<Book />
 			<Book />
 		</section>
 	);
@@ -34,7 +37,7 @@ const Title = () => {
 };
 
 const Author = () => {
-	return <h3>by Michael Wall and Karl Tate | 13 November 2018</h3>;
+	return <h4>by Michael Wall and Karl Tate | 13 November 2018</h4>;
 };
 // // Arrow function with implicit return
 // const Person = () => <h3>Person function!</h3>;
