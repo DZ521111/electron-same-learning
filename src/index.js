@@ -8,43 +8,51 @@ import ReactDom from "react-dom";
 import "./index.css";
 
 // we are going to pass this variable through props
-const firstBook = {
-	img: "https://m.media-amazon.com/images/I/51NhBr756lL._AC_UY327_FMwebp_QL65_.jpg",
-	title: "Out There: A Scientific Guide to Alien Life, Antimatter, and Human Space Travel (For the Cosmically Curious)",
-	author: "by Michael Wall and Karl Tate | 13 November 2018",
-};
-
-const secondBook = {
-	img: "https://m.media-amazon.com/images/I/81QDeZ1h0pL._AC_UY327_FMwebp_QL65_.jpg",
-	title: "Space - Constellations: Knowledge Encyclopedia For Children",
-	author: "by Wonder House Books  | 1 January 2020",
-};
+const allBooks = [
+	{
+		id: 1,
+		img: "https://m.media-amazon.com/images/I/51NhBr756lL._AC_UY327_FMwebp_QL65_.jpg",
+		title: "Out There: A Scientific Guide to Alien Life, Antimatter, and Human Space Travel",
+		author: "by Michael Wall and Karl Tate | 13 November 2018",
+	},
+	{
+		id: 2,
+		img: "https://m.media-amazon.com/images/I/81QDeZ1h0pL._AC_UY327_FMwebp_QL65_.jpg",
+		title: "Space - Constellations: Knowledge Encyclopedia For Children",
+		author: "by Wonder House Books  | 1 January 2020",
+	},
+	{
+		id: 3,
+		img: "https://m.media-amazon.com/images/I/51sX5WhsXLL._AC_UY327_FMwebp_QL65_.jpg",
+		title: "Space - 500 Facts",
+		author: "by Pegasus  | 18 May 2018",
+	},
+];
 
 // This component called stateless functional component or dumped component.
 // Always return JXS
 function BookList() {
 	return (
 		<section className="booklist">
-			{/* lets add children of component, children place between the component. */}
-			<Book img={firstBook.img} title={firstBook.title} author={firstBook.author}>
-				{/* when we need component not for all component but for some of the component */}
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem expedita, perspiciatis atque minima necessitatibus suscipit
-					officia cumque.
-				</p>
-			</Book>
-			<Book img={secondBook.img} title={secondBook.title} author={secondBook.author} />
+			{allBooks.map((book) => {
+				// return <Book img={book.img} title={book.title} author={book.author} />;
+				// return <Book key={book.id} book={book} />;
+				// we can pass it using also spread opeartor
+				return <Book key={book.id} {...book} />;
+			})}
 		</section>
 	);
 }
 
-const Book = (props) => {
+const Book = ({ img, title, author }) => {
+	// console.log(props);
+	// const { img, title, author } = props;
 	return (
 		<article className="book">
-			<img src={props.img} style={{ width: "150px" }} alt="" />
-			<h3>{props.title}</h3>
-			<h4>{props.author.toUpperCase()}</h4>
-			{props.children}
+			<img src={img} alt="" />
+			<h3>{title}</h3>
+			<h4>{author}</h4>
+			{/* {props.children} */}
 		</article>
 	);
 };
