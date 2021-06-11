@@ -7,27 +7,29 @@ import ReactDom from "react-dom";
 
 // This component called stateless functional component or dumped component.
 // Always return JXS
-function Greeting() {
+function BookList() {
 	return (
-		<div>
-			<h1>Hello, The Dz! </h1>
-			<Person />
-			<Message />
-		</div>
+		<section>
+			<Book />
+		</section>
 	);
 }
 
-// Arrow function with implicit return
-const Person = () => <h3>Person function!</h3>;
-
-// Arrow function with explicit return
-const Message = () => {
-	return <h3>Message function!</h3>;
+const Book = () => {
+	return <article>This is Book!</article>;
 };
+
+// // Arrow function with implicit return
+// const Person = () => <h3>Person function!</h3>;
+
+// // Arrow function with explicit return
+// const Message = () => {
+// 	return <h3>Message function!</h3>;
+// };
 
 // arguments are what is the component which you wants to render and where to render
 // we have <div id = "root"></div> in index.html which is main .html file in public folder
-ReactDom.render(<Greeting />, document.getElementById("root"));
+ReactDom.render(<BookList />, document.getElementById("root"));
 
 // This is one more method without JSX that we can fire html tage.
 // const Greeting = () => {
