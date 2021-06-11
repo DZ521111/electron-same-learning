@@ -21,7 +21,9 @@ function Greeting() {
 const Person = () => <h3>Person function!</h3>;
 
 // Arrow function with explicit return
-const Message = () => <h3>Message function!</h3>;
+const Message = () => {
+	return <h3>Message function!</h3>;
+};
 
 // arguments are what is the component which you wants to render and where to render
 // we have <div id = "root"></div> in index.html which is main .html file in public folder
