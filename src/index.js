@@ -25,7 +25,14 @@ const secondBook = {
 function BookList() {
 	return (
 		<section className="booklist">
-			<Book img={firstBook.img} title={firstBook.title} author={firstBook.author} />
+			{/* lets add children of component, children place between the component. */}
+			<Book img={firstBook.img} title={firstBook.title} author={firstBook.author}>
+				{/* when we need component not for all component but for some of the component */}
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem expedita, perspiciatis atque minima necessitatibus suscipit
+					officia cumque. Ad eius corrupti temporibus libero velit sequi tempora fuga, necessitatibus obcaecati numquam aperiam.
+				</p>
+			</Book>
 			<Book img={secondBook.img} title={secondBook.title} author={secondBook.author} />
 		</section>
 	);
@@ -34,8 +41,9 @@ function BookList() {
 const Book = (props) => {
 	return (
 		<article className="book">
-			<img src={props.img} alt="" />
+			<img src={props.img} style={{ width: "150px" }} alt="" />
 			<h3>{props.title}</h3>
+			{props.children}
 			<h4>{props.author.toUpperCase()}</h4>
 		</article>
 	);
