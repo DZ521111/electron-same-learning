@@ -19,11 +19,13 @@ function BookList() {
 }
 
 const Book = () => {
+	const title = "Out There: A Scientific Guide to Alien Life, Antimatter, and Human Space Travel (For the Cosmically Curious)";
+	const author = "by Michael Wall and Karl Tate | 13 November 2018";
 	return (
 		<article className="book">
 			<img src="https://m.media-amazon.com/images/I/51NhBr756lL._AC_UY327_FMwebp_QL65_.jpg" alt="" />
-			<h3>Out There: A Scientific Guide to Alien Life, Antimatter, and Human Space Travel (For the Cosmically Curious)</h3>
-			<h4>by Michael Wall and Karl Tate | 13 November 2018</h4>
+			<h3>{title}</h3>
+			<h4>{author}</h4>
 		</article>
 	);
 };
