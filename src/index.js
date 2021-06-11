@@ -20,25 +20,25 @@ function BookList() {
 
 const Book = () => {
 	return (
-		<article>
-			<Image />
-			<Title />
-			<Author />
+		<article className="book">
+			<img src="https://m.media-amazon.com/images/I/51NhBr756lL._AC_UY327_FMwebp_QL65_.jpg" alt="" />
+			<h3>Out There: A Scientific Guide to Alien Life, Antimatter, and Human Space Travel (For the Cosmically Curious)</h3>
+			<h4>by Michael Wall and Karl Tate | 13 November 2018</h4>
 		</article>
 	);
 };
 
-const Image = () => {
-	return <img src="https://m.media-amazon.com/images/I/51NhBr756lL._AC_UY327_FMwebp_QL65_.jpg" alt="" />;
-};
+// const Image = () => {
+// 	return ;
+// };
 
-const Title = () => {
-	return <h3>Out There: A Scientific Guide to Alien Life, Antimatter, and Human Space Travel (For the Cosmically Curious)</h3>;
-};
+// const Title = () => {
+// 	return ;
+// };
 
-const Author = () => {
-	return <h4>by Michael Wall and Karl Tate | 13 November 2018</h4>;
-};
+// const Author = () => {
+// 	return ;
+// };
 // // Arrow function with implicit return
 // const Person = () => <h3>Person function!</h3>;
 
